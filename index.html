@@ -14,10 +14,10 @@
             <nav class="nav">
                 <a href="/" class="logo">Все-такси</a>
                 <div class="nav-links">
-                    <a href="#">Тарифы</a>
-                     <a href="#">Услуги</a>
-                    <a href="#">О нас</a>
-                    <a href="#">Контакты</a>
+                    <a href="#" class="underline">Тарифы</a>
+                     <a href="#" class="underline">Услуги</a>
+                    <a href="#" class="underline">О нас</a>
+                    <a href="#" class="underline">Контакты</a>
                 </div>
 
                 <div class="header-contacts">
@@ -45,7 +45,7 @@
     <div class="container">
         <h2 class="section-title">Наши тарифы</h2>
         <div class="pricing-cards">
-            <div class="pricing-card">
+            <div class="pricing-card visible">
                 <h3 class="card-title">Эконом класс</h3>
                 <div class="price">20₽ <span>/ км</span></div>
                 <ul class="features">
@@ -54,7 +54,7 @@
                 <button class="btn btn-card">Заказать такси</button>
             </div>
 
-            <div class="pricing-card">
+            <div class="pricing-card visible">
                
                 <h3 class="card-title">Стандарт класс</h3>
                 <div class="price">22₽ <span>/ км</span></div>
@@ -64,7 +64,7 @@
                 <button class="btn btn-card">Заказать такси</button>
             </div>
 
-            <div class="pricing-card">
+            <div class="pricing-card visible">
                 <h3 class="card-title">Комфорт класс</h3>
                 <div class="price">3 500₽ <span>/ км</span></div>
                 <ul class="features">
@@ -72,6 +72,7 @@
                 </ul>
                 <button class="btn btn-card">Заказать такси</button>
             </div>
+            
 
 
             <div class="pricing-card">
@@ -82,6 +83,10 @@
                 </ul>
                 <button class="btn btn-card">Заказать такси</button>
             </div>
+        </div>
+
+         <div class="show-more-container">
+            <button id="showMoreBtn" class="btn btn-show-more">Показать еще</button>
         </div>
     </div>
 </div>
@@ -108,11 +113,118 @@
     </div>
 </div>
 
+
+ <div class="services-section">
+            <div class="container">
+                <h2 class="section-title">Междугородние направления оказываемых услуг</h2>
+ <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Самарская область</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                       <a href="" class="city">Самара</a>
+                        <div class="city">Тольятти</div>
+                        <div class="city">Сызрань</div>
+                        <div class="city">Новокуйбышевск</div>
+                        <div class="city">Чапаевск</div>
+                        <div class="city">Жигулёвск</div>
+                        <div class="city">Отрадный</div>
+                        <div class="city">Кинель</div>
+                        <div class="city">Похвистнево</div>
+                        <div class="city">Октябрьск</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">Московская область</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <div class="city">Москва</div>
+                        <div class="city">Химки</div>
+                        <div class="city">Балашиха</div>
+                        <div class="city">Подольск</div>
+                        <div class="city">Королёв</div>
+                        <div class="city">Мытищи</div>
+                        <div class="city">Люберцы</div>
+                        <div class="city">Электросталь</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">Ленинградская область</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <div class="city">Санкт-Петербург</div>
+                        <div class="city">Выборг</div>
+                        <div class="city">Гатчина</div>
+                        <div class="city">Тихвин</div>
+                        <div class="city">Сосновый Бор</div>
+                        <div class="city">Кириши</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">Свердловская область</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <div class="city">Екатеринбург</div>
+                        <div class="city">Нижний Тагил</div>
+                        <div class="city">Каменск-Уральский</div>
+                        <div class="city">Первоуральск</div>
+                        <div class="city">Серов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+          
+        </div>
+
  
         <div class="services-section">
-            <div class="services-header">
+            <div class="container">
                 <h2 class="section-title">Наши услуги</h2>
-                <p>Широкий спектр транспортных решений для вашего комфорта и удобства</p>
+   <div class="services-container">
+        <div class="service-card">
+            <div class="number">1</div>
+            <h3>С табличкой</h3>
+            <p>Встреча с табличкой – удобная услуга для гостей и жителей города. Избегайте ожидания и общественного транспорта – выбирайте комфортное и доступное "Все Такси" для быстрого перемещения.</p>
+        </div>
+        
+        <div class="service-card">
+            <div class="number">2</div>
+            <h3>Детское кресло</h3>
+            <p>Детское такси – это популярная услуга в компании "Все-такси", которая пользуется большим спросом. Если ваш автомобиль находится на ремонте или вам нужно доставить маленького пассажира из одного города в другой, то не обойтись без "Все такси"
+        </div>
+        
+        <div class="service-card">
+            <div class="number">3</div>
+            <h3>Предварительный заказ</h3>
+            <p>Заблаговременное бронирование такси в компании "Все-такси" позволяет тщательно спланировать вашу поездку, учитывая все детали. Вы можете оформить заказ на завтра или на конкретное время, указав все необходимые требования.</p>
+        </div>
+        
+        <div class="service-card">
+            <div class="number">4</div>
+            <h3>Трансфер в аэропорт</h3>
+            <p>Наша таксомоторная служба такси "Все-такси" предлагает услуги трансфера из любого места Российской Федерации во все аэропорты страны, а также транспортировку из аэропортов в любую точку РФ.</p>
+        </div>
+        
+        <div class="service-card">
+             <div class="number">5</div>
+            <h3>Корпортивным<br> клиентам</h3>
+            <p>Наша компания «Все-такси» готова предоставить вам услуги корпоративного такси. Сотрудники фирмы должны присутствовать на различных встречах и мероприятиях, встречать партнеров и проводить различные экскурсии.</p>
+        </div>
+        
+        <div class="service-card">
+             <div class="number">6</div>
+            <h3>Перевозка животных</h3>
+            <p>Чтобы поехать с животным, надо соблюсти ряд правил. Наша таксомоторная служба такси, имеет требование заранее сообщать о поездке с любимцем. Далеко не каждый водитель согласен принять такой заказ на дальнее расстояние, и неприятным сюрпризом наличие питомца стать не должно</p>
+            <div>
+    </div>
             </div>
           
         </div>
@@ -120,5 +232,46 @@
 
 
 
+
+
+
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    
+    showMoreBtn.addEventListener('click', function() {
+        pricingCards.forEach(card => {
+            if (!card.classList.contains('visible')) {
+                card.classList.add('visible');
+            }
+        });
+        
+        showMoreBtn.style.display = 'none';
+    });
+});
+
+
+
+   document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.classList.toggle('active');
+                const content = header.nextElementSibling;
+                if (header.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+                
+                // Закрываем другие открытые аккордеоны
+                document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+                    if (otherHeader !== header && otherHeader.classList.contains('active')) {
+                        otherHeader.classList.remove('active');
+                        otherHeader.nextElementSibling.style.maxHeight = '0';
+                    }
+                });
+            });
+        });
+</script>
 </body>
 </html>
