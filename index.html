@@ -6,6 +6,7 @@
     <title>Междугороднее такси по РФ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@22.6.0/dist/css/suggestions.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,8 +23,19 @@
 
                 <div class="header-contacts">
                     <a href="tel:79272182400" class="phone">+7 (927) 218-24-00</a>
-                    
+                    <a href="https://t.me/" class="social-icon telegram" target="_blank" aria-label="Telegram">
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 32 32">
+  <path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+</svg></a>
+                <a href="https://wa.me/" class="social-icon whatsapp" target="_blank" aria-label="WhatsApp">
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg id="Capa_1" width="35" style="enable-background:new 0 0 90 90;" version="1.1" viewBox="0 0 90 90" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g><path d="M90,43.8c0,24.2-19.8,43.8-44.2,43.8c-7.7,0-15-2-21.4-5.5L0,90l8-23.5c-4-6.6-6.3-14.4-6.3-22.6     C1.6,19.6,21.4,0,45.8,0C70.2,0,90,19.6,90,43.8z M45.8,7C25.3,7,8.7,23.5,8.7,43.8c0,8.1,2.6,15.5,7.1,21.6l-4.6,13.7l14.3-4.5     c5.9,3.9,12.9,6.1,20.4,6.1C66.3,80.7,83,64.2,83,43.8S66.3,7,45.8,7z M68.1,53.9c-0.3-0.4-1-0.7-2.1-1.3     c-1.1-0.5-6.4-3.1-7.4-3.5c-1-0.4-1.7-0.5-2.4,0.5c-0.7,1.1-2.8,3.5-3.4,4.2c-0.6,0.7-1.3,0.8-2.3,0.3c-1.1-0.5-4.6-1.7-8.7-5.3     c-3.2-2.8-5.4-6.4-6-7.4c-0.6-1.1-0.1-1.7,0.5-2.2c0.5-0.5,1.1-1.3,1.6-1.9c0.5-0.6,0.7-1.1,1.1-1.8c0.4-0.7,0.2-1.3-0.1-1.9     c-0.3-0.5-2.4-5.8-3.3-8c-0.9-2.1-1.8-1.8-2.4-1.8c-0.6,0-1.4-0.1-2.1-0.1s-1.9,0.3-2.9,1.3c-1,1.1-3.8,3.7-3.8,9     c0,5.3,3.9,10.4,4.4,11.1c0.5,0.7,7.5,11.9,18.5,16.2c11,4.3,11,2.9,13,2.7c2-0.2,6.4-2.6,7.3-5.1C68.4,56.5,68.4,54.4,68.1,53.9     z" id="WhatsApp"/></g></g></svg></a>
                 </div>
+
+                 <button class="burger-menu" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             </nav>
             
             <div class="hero">
@@ -229,8 +241,130 @@
           
         </div>
 
+    <div class="services-section">
+    <div class="container">
+       <h2 class="section-title">Рассчитать стоимость поездки</h2>
+        
+       <div class="calculator">
+    <div class="form-group">
+        <label for="from">Откуда:</label>
+        <input type="text" id="cityFrom" placeholder="Город или адрес отправления">
+    </div>
+    
+    <div class="form-group">
+        <label for="to">Куда:</label>
+        <input type="text" id="cityTo" placeholder="Город или адрес назначения">
+    </div>
 
+    <div class="form-group">
+        <label>Класс автомобиля:</label>
+        <div class="radio-group-container">
+            <div class="radio-group">
+                <div class="radio-option">
+    <input type="radio" id="economy" name="class" value="economy" data-rate="20" checked>
+    <label for="economy">Эконом (20₽/км)</label>
+</div>
+<div class="radio-option">
+    <input type="radio" id="standard" name="class" value="standard" data-rate="22">
+    <label for="standard">Стандарт (22₽/км)</label>
+</div>
+<div class="radio-option">
+    <input type="radio" id="comfort" name="class" value="comfort" data-rate="25">
+    <label for="comfort">Комфорт (25₽/км)</label>
+</div>
+<div class="radio-option">
+    <input type="radio" id="business" name="class" value="business" data-rate="30">
+    <label for="business">Бизнес (30₽/км)</label>
+</div>
+<div class="radio-option">
+    <input type="radio" id="premium" name="class" value="premium" data-rate="35">
+    <label for="premium">Премиум (35₽/км)</label>
+</div>
+<div class="radio-option">
+    <input type="radio" id="minivan" name="class" value="minivan" data-rate="28">
+    <label for="minivan">Минивэн (28₽/км)</label>
+</div>
+<div class="radio-option">
+    <input type="radio" id="suv" name="class" value="suv" data-rate="32">
+    <label for="suv">Внедорожник (32₽/км)</label>
+</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="options">Дополнительные услуги:</label>
+        <select id="services">
+            <option value="0">Без дополнительных услуг</option>
+            <option value="500">Детское кресло (+500₽)</option>
+            <option value="300">Встреча с табличкой (+300₽)</option>
+            <option value="1000">Перевозка животных (+1000₽)</option>
+            <option value="700">Большой багаж (+700₽)</option>
+        </select>
+    </div>
+    <div class="result" id="result"></div>
+    <div id="map" style="width: 100%; height: 400px; margin-top: 20px; display: none;"></div>
+    <button class="calculatebtn btn" onclick="calculateCost()">Рассчитать стоимость</button>
+</div>
 
+<style>
+
+    
+    .radio-group-container {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .radio-group {
+        display: flex;
+        gap: 12px;
+        padding-bottom: 5px;
+        min-width: max-content;
+    }
+    
+    .radio-option {
+        flex: 0 0 auto;
+        min-width: 120px;
+    }
+    
+    .radio-option input {
+        display: none;
+    }
+    
+    .radio-option label {
+        display: block;
+        padding: 12px 16px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+    }
+   
+
+    /* Стили для скроллбара */
+    .radio-group-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .radio-group-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+    
+    .radio-group-container::-webkit-scrollbar-thumb {
+        background: #FFD700;
+        border-radius: 3px;
+    }
+    
+    .radio-group-container::-webkit-scrollbar-thumb:hover {
+        background: #e6c300;
+    }
+</style>
+    </div>
+
+    </div>
 
 
 
@@ -272,6 +406,159 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    burgerMenu.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+    
+    // Закрываем меню при клике на ссылку
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+});
+
 </script>
+
+
+ 
+
+    <!-- Подключаем необходимые библиотеки -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
+   <script src="https://api-maps.yandex.ru/2.1/?apikey=d3b3d20b-6c57-4626-b184-69cda98f0559&suggest_apikey=0d3aa57b-7df0-49af-a363-3a7b72745602&lang=ru_RU" type="text/javascript"></script>
+    
+    <script>
+        jQuery.noConflict();
+        (function($) {
+            $(document).ready(function() {
+                // Инициализация подсказок для адресов
+                $("#cityFrom").suggestions({
+                    token: "2ca423f90d51a7825cab5f07efdbf16f37c589f5",
+                    type: "ADDRESS",
+                    count: 5,
+                    minChars: 3,
+                    onSelect: function(suggestion) {
+                        console.log("Выбрано место отправления:", suggestion.value);
+                    }
+                });
+                
+                $("#cityTo").suggestions({
+                    token: "2ca423f90d51a7825cab5f07efdbf16f37c589f5",
+                    type: "ADDRESS",
+                    count: 5,
+                    minChars: 3,
+                    onSelect: function(suggestion) {
+                        console.log("Выбрано место назначения:", suggestion.value);
+                    }
+                });
+            });
+        })(jQuery);
+
+        let myMap;
+        let route;
+
+        function calculateCost() {
+            var cityFrom = document.getElementById('cityFrom').value.trim();
+            var cityTo = document.getElementById('cityTo').value.trim();
+            
+            // Получаем выбранный тариф
+            var selectedClass = document.querySelector('input[name="class"]:checked');
+            if (!selectedClass) {
+                alert("Пожалуйста, выберите класс автомобиля.");
+                return;
+            }
+            var tariff = parseFloat(selectedClass.getAttribute('data-rate'));
+            
+            // Получаем стоимость дополнительных услуг
+            var servicesSelect = document.getElementById('services');
+            var servicesCost = parseFloat(servicesSelect.value);
+
+            if (!cityFrom || !cityTo) {
+                alert("Пожалуйста, заполните все поля.");
+                return;
+            }
+
+            ymaps.ready(function () {
+                var geocoderFrom = ymaps.geocode(cityFrom);
+                var geocoderTo = ymaps.geocode(cityTo);
+
+                Promise.all([geocoderFrom, geocoderTo]).then(function (res) {
+                    if (res[0].geoObjects.getLength() === 0 || res[1].geoObjects.getLength() === 0) {
+                        alert('Не удалось найти указанные адреса. Проверьте правильность ввода.');
+                        return;
+                    }
+
+                    var coordsFrom = res[0].geoObjects.get(0).geometry.getCoordinates();
+                    var coordsTo = res[1].geoObjects.get(0).geometry.getCoordinates();
+
+                    ymaps.route([coordsFrom, coordsTo]).then(function (route) {
+                        if (!route) {
+                            alert('Не удалось построить маршрут между указанными точками.');
+                            return;
+                        }
+
+                        var distance = route.getLength() / 1000; // расстояние в км
+                        var baseCost = distance * tariff;
+                        var totalCost = baseCost + servicesCost;
+
+                        document.getElementById('result').innerHTML = `
+                            <strong>Стоимость поездки:</strong> ${Math.round(totalCost)}₽<br>
+                            <strong>Расстояние:</strong> ${distance.toFixed(1)} км<br>
+                            <strong>Тариф:</strong> ${tariff}₽/км<br>
+                            <strong>Доп. услуги:</strong> ${servicesCost}₽
+                        `;
+
+                        // Отображаем карту
+                        document.getElementById('map').style.display = 'block';
+
+                        // Удаляем старую карту, если есть
+                        if (myMap) {
+                            myMap.destroy();
+                        }
+
+                        // Создаем новую карту
+                        myMap = new ymaps.Map("map", {
+                            center: coordsFrom,
+                            zoom: 10
+                        });
+
+                        // Добавляем маршрут на карту
+                        myMap.geoObjects.add(route.getPaths());
+
+                        // Добавляем метки начала и конца маршрута
+                        var placemarkFrom = new ymaps.Placemark(coordsFrom, {
+                            hintContent: 'Точка отправления'
+                        });
+                        var placemarkTo = new ymaps.Placemark(coordsTo, {
+                            hintContent: 'Точка назначения'
+                        });
+                        
+                        myMap.geoObjects.add(placemarkFrom);
+                        myMap.geoObjects.add(placemarkTo);
+
+                        // Автоматически подбираем масштаб
+                        myMap.setBounds(route.getWayPoints().getBounds(), {
+                            checkZoomRange: true
+                        });
+
+                    }).catch(function (error) {
+                        alert('Ошибка при построении маршрута: ' + error.message);
+                    });
+                }).catch(function (error) {
+                    alert('Ошибка при геокодировании: ' + error.message);
+                });
+            });
+        }
+    </script>
+
 </body>
 </html>
