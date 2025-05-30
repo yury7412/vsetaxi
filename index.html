@@ -381,7 +381,8 @@
     .result div {
         margin-bottom: 10px;
             font-size: 15px;
-            font-weight: 600;
+    font-weight: 600;
+
     }
 
 
@@ -528,7 +529,7 @@
                     var totalCost = baseCost + serviceCost;
 
                     document.getElementById('result').innerHTML = `
-                        <div>Расстояние: <strong>${distance.toFixed(2)} км</strong> Базовая стоимость: <strong>${baseCost.toFixed(2)} ₽</div>
+                        <div>Расстояние: <strong>${distance.toFixed(2)} км</strong> Стоимость поездки: <strong>${baseCost.toFixed(2)} ₽</div>
                     `;
 
                     document.getElementById('map').style.display = 'block';
@@ -709,7 +710,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
  
 
-  
+    <!-- Подключаем необходимые библиотеки -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
+   <script src="https://api-maps.yandex.ru/2.1/?apikey=d3b3d20b-6c57-4626-b184-69cda98f0559&suggest_apikey=0d3aa57b-7df0-49af-a363-3a7b72745602&lang=ru_RU" type="text/javascript"></script>
     
     <script>
         jQuery.noConflict();
