@@ -373,14 +373,12 @@
     }
 
     .result {
-        margin-top: 30px;
         text-align: center;
         font-size: 18px;
     }
 
     .result div {
         margin-bottom: 10px;
-            font-size: 15px;
     font-weight: 600;
 
     }
@@ -447,10 +445,8 @@
         </select>
     </div>
     
-    <button class="btn btn-card" onclick="calculateCost()">Рассчитать стоимость</button>
-    
-    <div class="result" id="result"></div>
-    <div id="map"></div>
+    <div class="result" id="result">Введите адреса для расчета стоимости</div>
+    <div id="map" style="height: 300px; margin-top: 20px; display: none;"></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -470,6 +466,7 @@
                 minChars: 3,
                 onSelect: function(suggestion) {
                     console.log("Выбрано место отправления:", suggestion.value);
+                    calculateCost();
                 }
             });
             
@@ -480,6 +477,7 @@
                 minChars: 3,
                 onSelect: function(suggestion) {
                     console.log("Выбрано место назначения:", suggestion.value);
+                    calculateCost();
                 }
             });
             
@@ -487,31 +485,55 @@
             $(".tariff-btn").click(function() {
                 $(".tariff-btn").removeClass("active");
                 $(this).addClass("active");
+                calculateCost();
+            });
+            
+            // Обработка изменения дополнительных услуг
+            $("#services").change(function() {
+                calculateCost();
+            });
+            
+            // Обработка ручного ввода адресов
+            $("#cityFrom, #cityTo").on('input', function() {
+                // Добавляем небольшую задержку, чтобы не отправлять запрос на каждый ввод
+                clearTimeout(window.inputTimer);
+                window.inputTimer = setTimeout(calculateCost, 1000);
             });
         });
     })(jQuery);
 
     let myMap;
     let route;
+    let lastRequestId = 0;
 
     function calculateCost() {
         var cityFrom = document.getElementById('cityFrom').value.trim();
         var cityTo = document.getElementById('cityTo').value.trim();
         var tariff = parseFloat($(".tariff-btn.active").data("value"));
         var serviceCost = parseFloat($("#services").val()) || 0;
+        
+        // Увеличиваем ID запроса
+        var currentRequestId = ++lastRequestId;
 
         if (!cityFrom || !cityTo) {
-            alert("Пожалуйста, заполните адреса отправления и назначения.");
+            document.getElementById('result').innerHTML = "Введите адреса для расчета стоимости";
+            document.getElementById('map').style.display = 'none';
             return;
         }
 
+        document.getElementById('result').innerHTML = "Рассчитываем стоимость...";
+        
         ymaps.ready(function () {
             var geocoderFrom = ymaps.geocode(cityFrom);
             var geocoderTo = ymaps.geocode(cityTo);
 
             Promise.all([geocoderFrom, geocoderTo]).then(function (res) {
+                // Проверяем, не устарел ли запрос
+                if (currentRequestId !== lastRequestId) return;
+                
                 if (res[0].geoObjects.getLength() === 0 || res[1].geoObjects.getLength() === 0) {
-                    alert('Не удалось найти указанные адреса. Проверьте правильность ввода.');
+                    document.getElementById('result').innerHTML = "Не удалось найти указанные адреса. Проверьте правильность ввода.";
+                    document.getElementById('map').style.display = 'none';
                     return;
                 }
 
@@ -519,8 +541,12 @@
                 var coordsTo = res[1].geoObjects.get(0).geometry.getCoordinates();
 
                 ymaps.route([coordsFrom, coordsTo]).then(function (route) {
+                    // Проверяем, не устарел ли запрос
+                    if (currentRequestId !== lastRequestId) return;
+                    
                     if (!route) {
-                        alert('Не удалось построить маршрут между указанными точками.');
+                        document.getElementById('result').innerHTML = "Не удалось построить маршрут между указанными точками.";
+                        document.getElementById('map').style.display = 'none';
                         return;
                     }
 
@@ -529,7 +555,7 @@
                     var totalCost = baseCost + serviceCost;
 
                     document.getElementById('result').innerHTML = `
-                        <div>Расстояние: <strong>${distance.toFixed(2)} км</strong> Стоимость поездки: <strong>${baseCost.toFixed(2)} ₽</div>
+                        <div><strong>Расстояние:</strong> ${distance.toFixed(2)} км <strong>Итого:</strong> ${totalCost.toFixed(2)} ₽</div>
                     `;
 
                     document.getElementById('map').style.display = 'block';
@@ -546,10 +572,14 @@
 
                     myMap.geoObjects.add(route.getPaths());
                 }).catch(function (error) {
-                    alert('Ошибка при построении маршрута: ' + error.message);
+                    if (currentRequestId !== lastRequestId) return;
+                    document.getElementById('result').innerHTML = "Ошибка при построении маршрута: " + error.message;
+                    document.getElementById('map').style.display = 'none';
                 });
             }).catch(function (error) {
-                alert('Ошибка при геокодировании: ' + error.message);
+                if (currentRequestId !== lastRequestId) return;
+                document.getElementById('result').innerHTML = "Ошибка при определении адресов: " + error.message;
+                document.getElementById('map').style.display = 'none';
             });
         });
     }
