@@ -10,6 +10,10 @@
 	padding: 30px 0;
 }
 
+li{
+    list-style: none;
+}
+
 .header-contacts{
     display: flex;
     align-items: center;
@@ -289,9 +293,6 @@
     display: flex;
 }
 
- .pricing-card:hover {
-	box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
  .card-title {
 	font-size: 24px;
 	font-weight: 700;
@@ -727,9 +728,14 @@
 
 
     .section-title {
-    font-size: 30px;
+    font-size: 27px;
     margin-bottom: 40px;
     }
+
+    .service-card {
+    padding: 15px 25px;
+
+}
 
 }
 
@@ -827,4 +833,274 @@
     .faq-image {
         display: none;
     }
+}
+
+
+/* Стили модального окна */
+        .taxi-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+        
+        .taxi-modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 800px;
+            animation: modalopen 0.3s;
+        }
+
+        .taxi-modal-content h2{
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close-btn {
+            color: #333;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -11px;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .taxi-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            .taxi-modal-content {
+                margin: 20% auto;
+                width: 95%;
+            }
+
+            .calculator-title {
+                font-size: 25px;
+            }
+
+            .taxi-modal-content h2 {
+                font-size: 23px;
+            }
+
+           .contact_section_wrapper .cont_wrapper {
+                font-size: 23px;
+            }
+
+            .contact_list_wrapper{
+                flex-wrap: wrap;
+            }
+
+            .contact_list_cont a {
+                font-size: 18px !important;
+            }
+        }
+
+
+
+
+
+
+        .flex_cont_input{
+        display: flex
+;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #CCCCCC;
+        border-radius: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        outline: none;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    .btn_price_taxi {
+        background-color: #FFA214;
+        width: 100%;
+        padding: 18px;
+        border-radius: 60px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        font-weight: 600;
+        color: white;
+        margin-top: 10px;
+    }
+
+    .btn_price_taxi:hover {
+        background-color: #ffac2e;
+    }
+    
+    /* Стиль для ошибок валидации */
+    .error-message {
+        color: #ff0000;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+    }
+    
+    input.error, select.error {
+        border-color: #ff0000 !important;
+    }
+    
+    
+    @media(max-width: 715px){
+        .flex_cont_input{
+            flex-wrap: wrap;
+             gap: 0px;
+        }
+    }
+
+
+
+.contact_section_wrapper{
+    background-color: #f7f7f7;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.contact_list_cont{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact_list_cont a{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact_list_cont a:hover{
+    color: #ffc107;
+}
+
+
+.contact_list_wrapper{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cont_wrapper{
+    font-size: 30px;
+}
+
+
+.social_media_list{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn_footer{
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.politic{
+    color: #333;
+     transition: 0.3s;    
+}
+
+.politic:hover{
+    color: #ffc107;
+}
+
+.social-icon_phone{
+    display: none;
+}
+
+
+@media (max-width: 1024px){
+    .social-icon_phone{
+    display: block;
+}
 }
