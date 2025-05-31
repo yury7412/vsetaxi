@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header class="header">
         <div class="container">
             <nav class="nav">
@@ -29,6 +30,9 @@
 </svg></a>
                 <a href="https://wa.me/" class="social-icon whatsapp" target="_blank" aria-label="WhatsApp">
 <?xml version="1.0" ?><svg id="Capa_1" width="35" style="enable-background:new 0 0 90 90;" version="1.1" viewBox="0 0 90 90" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g><path d="M90,43.8c0,24.2-19.8,43.8-44.2,43.8c-7.7,0-15-2-21.4-5.5L0,90l8-23.5c-4-6.6-6.3-14.4-6.3-22.6     C1.6,19.6,21.4,0,45.8,0C70.2,0,90,19.6,90,43.8z M45.8,7C25.3,7,8.7,23.5,8.7,43.8c0,8.1,2.6,15.5,7.1,21.6l-4.6,13.7l14.3-4.5     c5.9,3.9,12.9,6.1,20.4,6.1C66.3,80.7,83,64.2,83,43.8S66.3,7,45.8,7z M68.1,53.9c-0.3-0.4-1-0.7-2.1-1.3     c-1.1-0.5-6.4-3.1-7.4-3.5c-1-0.4-1.7-0.5-2.4,0.5c-0.7,1.1-2.8,3.5-3.4,4.2c-0.6,0.7-1.3,0.8-2.3,0.3c-1.1-0.5-4.6-1.7-8.7-5.3     c-3.2-2.8-5.4-6.4-6-7.4c-0.6-1.1-0.1-1.7,0.5-2.2c0.5-0.5,1.1-1.3,1.6-1.9c0.5-0.6,0.7-1.1,1.1-1.8c0.4-0.7,0.2-1.3-0.1-1.9     c-0.3-0.5-2.4-5.8-3.3-8c-0.9-2.1-1.8-1.8-2.4-1.8c-0.6,0-1.4-0.1-2.1-0.1s-1.9,0.3-2.9,1.3c-1,1.1-3.8,3.7-3.8,9     c0,5.3,3.9,10.4,4.4,11.1c0.5,0.7,7.5,11.9,18.5,16.2c11,4.3,11,2.9,13,2.7c2-0.2,6.4-2.6,7.3-5.1C68.4,56.5,68.4,54.4,68.1,53.9     z" id="WhatsApp"/></g></g></svg></a>
+
+
+                 <a href="tel:79272182400" class="social-icon whatsapp social-icon_phone" target="_blank" aria-label="phone"><img src="img/free-icon-phone-call-455705.png" alt="icon" width="35px"></a>
                 </div>
 
                  <button class="burger-menu" aria-label="Меню">
@@ -42,7 +46,7 @@
                 <div class="hero-content">
                     <h1 class="hero-title">Междугородние поездки по России</h1>
                     <p class="hero-subtitle">Комфортабельные автомобили с профессиональными водителями. Быстро, безопасно и по фиксированным ценам.</p>
-                    <a href="#" class="btn">Заказать такси</a>
+                    <a href="#" class="btn taxi-order-btn">Заказать такси</a>
                 </div>
                 <div class="hero-image">
                     <img src="img/kia-optima-4.png" alt="Такси" class="taxi">
@@ -63,7 +67,7 @@
                 <ul class="features">
                     <li>Автомобили эконом класса. Hyundai Solaris, Renault Logan, Lada Granta, Lada Vesta</li>
                 </ul>
-                <button class="btn btn-card">Заказать такси</button>
+                <button class="btn btn-card taxi-order-btn">Заказать такси</button>
             </div>
 
             <div class="pricing-card visible">
@@ -73,7 +77,7 @@
                 <ul class="features">
                     <li>Автомобили с базовым уровнем комфорта. Skoda Rapid, VW Polo, Kia Rio.</li>
                 </ul>
-                <button class="btn btn-card">Заказать такси</button>
+                <button class="btn btn-card taxi-order-btn">Заказать такси</button>
             </div>
 
             <div class="pricing-card visible">
@@ -82,7 +86,7 @@
                 <ul class="features">
                     <li>Комфортный вариант для дальних поездок. Skoda Octavia, Renault Fluence, Chevrolet Cruze.</li>
                 </ul>
-                <button class="btn btn-card">Заказать такси</button>
+                <button class="btn btn-card taxi-order-btn">Заказать такси</button>
             </div>
             
 
@@ -93,7 +97,7 @@
                 <ul class="features">
                     <li>Тариф Комфорт Plus идеально подойдёт, для деловых поездок. Toyta Camry, Passat.</li>
                 </ul>
-                <button class="btn btn-card">Заказать такси</button>
+                <button class="btn btn-card taxi-order-btn">Заказать такси</button>
             </div>
         </div>
 
@@ -583,6 +587,90 @@
             });
         });
     }
+
+
+     // Инициализация модального окна
+    document.addEventListener('DOMContentLoaded', function() {
+        // Получаем элементы
+        const modal = document.getElementById('taxiModal');
+        const closeBtn = document.querySelector('.close-btn');
+        const orderBtns = document.querySelectorAll('.taxi-order-btn');
+        const taxiForm = document.querySelector('.taxi-form');
+        
+        // Функция открытия модального окна
+        function openModal() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Запрещаем прокрутку страницы
+        }
+        
+        // Функция закрытия модального окна
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Возвращаем прокрутку страницы
+        }
+        
+        // Назначаем обработчики событий на все кнопки заказа такси
+        orderBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+        });
+        
+        // Закрытие по клику на крестик
+        closeBtn.addEventListener('click', closeModal);
+        
+        // Закрытие по клику вне модального окна
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Закрытие по нажатию Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+        
+        // Обработка отправки формы
+        taxiForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Получаем данные формы
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const phone = document.getElementById('phone').value;
+            const carType = document.getElementById('car-type').value;
+            
+            // Здесь можно отправить данные на сервер или обработать их
+            console.log('Заказ такси:', { from, to, phone, carType });
+            
+            // Показываем сообщение об успехе
+            alert(`Такси заказано! Мы перезвоним вам на номер ${phone} для подтверждения.`);
+            
+            // Закрываем модальное окно
+            closeModal();
+            
+            // Очищаем форму
+            taxiForm.reset();
+        });
+    });
+    
+    // Функция для ручного подключения к любой кнопке
+    function attachTaxiModal(selector) {
+        const elements = document.querySelectorAll(selector);
+        
+        elements.forEach(element => {
+            element.classList.add('taxi-order-btn');
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('taxiModal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+    }
 </script>
     </div>
 
@@ -640,45 +728,342 @@
         
         <div class="faq-image" style="background-image: url('https://avatars.mds.yandex.net/get-altay/13930885/2a00000192815d37262071af2da66f8ec5ae/XXL_height');border-radius: 30px; height: 500px;"></div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const questions = document.querySelectorAll('.faq-question');
-            
-            questions.forEach(question => {
-                question.addEventListener('click', function() {
-                    // Закрываем все открытые ответы
-                    questions.forEach(q => {
-                        if (q !== question) {
-                            q.classList.remove('active');
-                            q.nextElementSibling.style.maxHeight = null;
-                        }
-                    });
-                    
-                    // Открываем/закрываем текущий ответ
-                    this.classList.toggle('active');
-                    const answer = this.nextElementSibling;
-                    
-                    if (answer.style.maxHeight) {
-                        answer.style.maxHeight = null;
-                    } else {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                    }
-                });
-            });
-            
-            // Открываем первый вопрос по умолчанию
-            if (questions.length > 0) {
-                questions[0].click();
-            }
-        });
-    </script>
+     </div>
      </div>
 
 
+    <footer class="contact_section_wrapper">
+         <h2 class="section-title cont_wrapper">Связаться с нами</h2>
+
+         <div class="contact_list_wrapper">
+            <div class="contact_list_cont">
+                <svg width="27" height="27" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M28.7137 21.0558L21.4829 17.8153C21.1553 17.675 20.7978 17.6185 20.4429 17.6511C20.0879 17.6837 19.7467 17.8044 19.4502 18.0021C19.4201 18.0215 19.3915 18.043 19.3644 18.0664L15.5852 21.2808C15.546 21.3022 15.5024 21.3141 15.4577 21.3157C15.4131 21.3173 15.3687 21.3085 15.3281 21.29C12.8989 20.1175 10.3825 17.6164 9.20543 15.2209C9.18583 15.1808 9.17564 15.1368 9.17564 15.0923C9.17564 15.0477 9.18583 15.0037 9.20543 14.9637L12.4305 11.137C12.4537 11.1087 12.4752 11.0791 12.4948 11.0483C12.6898 10.7505 12.8076 10.409 12.8375 10.0543C12.8675 9.69973 12.8086 9.34324 12.6663 9.01706L9.44881 1.79843C9.26609 1.37231 8.95009 1.01693 8.54825 0.785655C8.14641 0.554375 7.6804 0.459661 7.22016 0.515729C5.21992 0.778693 3.38388 1.76099 2.05512 3.27904C0.726365 4.7971 -0.00417516 6.74705 1.79507e-05 8.7645C1.79507e-05 20.7496 9.75035 30.5 21.7354 30.5C23.7528 30.5038 25.7026 29.7732 27.2205 28.4445C28.7385 27.1158 29.7209 25.2799 29.9842 23.2798C30.0401 22.8217 29.9467 22.3578 29.7178 21.9571C29.4889 21.5564 29.1368 21.2403 28.7137 21.0558ZM21.7354 28.6632C10.7636 28.6632 1.83681 19.7363 1.83681 8.7645C1.8317 7.19393 2.39857 5.67521 3.43153 4.49211C4.46448 3.30901 5.89285 2.54247 7.44976 2.33569H7.48496C7.54665 2.33684 7.60654 2.35661 7.6568 2.39239C7.70706 2.42817 7.74533 2.4783 7.76661 2.53621L10.9963 9.74719C11.0147 9.78728 11.0243 9.83088 11.0243 9.875C11.0243 9.91912 11.0147 9.96272 10.9963 10.0028L7.76508 13.8387C7.74108 13.8661 7.71909 13.8953 7.69926 13.9259C7.49706 14.2346 7.378 14.5902 7.3536 14.9584C7.32919 15.3266 7.40028 15.6949 7.55997 16.0275C8.91766 18.8072 11.7188 21.5869 14.5291 22.9446C14.8637 23.1034 15.2337 23.1728 15.6031 23.146C15.9725 23.1191 16.3287 22.997 16.6368 22.7915C16.6659 22.7716 16.695 22.7502 16.7225 22.7273L20.5002 19.5128C20.5375 19.4928 20.5787 19.4811 20.621 19.4784C20.6632 19.4758 20.7056 19.4823 20.7451 19.4975L27.9775 22.738C28.0366 22.7631 28.0862 22.8062 28.1195 22.8612C28.1527 22.9161 28.1678 22.9801 28.1627 23.0441C27.957 24.6017 27.1912 26.0312 26.0083 27.0653C24.8255 28.0994 23.3066 28.6674 21.7354 28.6632Z" fill="#ffc107"></path> </svg>
+                <a href="tel:+79272182400">+7 (927) 218-24-00</a>
+            </div>
 
 
-        <script>
+            <div class="contact_list_cont">
+                <svg width="27" height="27" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M28.7137 21.0558L21.4829 17.8153C21.1553 17.675 20.7978 17.6185 20.4429 17.6511C20.0879 17.6837 19.7467 17.8044 19.4502 18.0021C19.4201 18.0215 19.3915 18.043 19.3644 18.0664L15.5852 21.2808C15.546 21.3022 15.5024 21.3141 15.4577 21.3157C15.4131 21.3173 15.3687 21.3085 15.3281 21.29C12.8989 20.1175 10.3825 17.6164 9.20543 15.2209C9.18583 15.1808 9.17564 15.1368 9.17564 15.0923C9.17564 15.0477 9.18583 15.0037 9.20543 14.9637L12.4305 11.137C12.4537 11.1087 12.4752 11.0791 12.4948 11.0483C12.6898 10.7505 12.8076 10.409 12.8375 10.0543C12.8675 9.69973 12.8086 9.34324 12.6663 9.01706L9.44881 1.79843C9.26609 1.37231 8.95009 1.01693 8.54825 0.785655C8.14641 0.554375 7.6804 0.459661 7.22016 0.515729C5.21992 0.778693 3.38388 1.76099 2.05512 3.27904C0.726365 4.7971 -0.00417516 6.74705 1.79507e-05 8.7645C1.79507e-05 20.7496 9.75035 30.5 21.7354 30.5C23.7528 30.5038 25.7026 29.7732 27.2205 28.4445C28.7385 27.1158 29.7209 25.2799 29.9842 23.2798C30.0401 22.8217 29.9467 22.3578 29.7178 21.9571C29.4889 21.5564 29.1368 21.2403 28.7137 21.0558ZM21.7354 28.6632C10.7636 28.6632 1.83681 19.7363 1.83681 8.7645C1.8317 7.19393 2.39857 5.67521 3.43153 4.49211C4.46448 3.30901 5.89285 2.54247 7.44976 2.33569H7.48496C7.54665 2.33684 7.60654 2.35661 7.6568 2.39239C7.70706 2.42817 7.74533 2.4783 7.76661 2.53621L10.9963 9.74719C11.0147 9.78728 11.0243 9.83088 11.0243 9.875C11.0243 9.91912 11.0147 9.96272 10.9963 10.0028L7.76508 13.8387C7.74108 13.8661 7.71909 13.8953 7.69926 13.9259C7.49706 14.2346 7.378 14.5902 7.3536 14.9584C7.32919 15.3266 7.40028 15.6949 7.55997 16.0275C8.91766 18.8072 11.7188 21.5869 14.5291 22.9446C14.8637 23.1034 15.2337 23.1728 15.6031 23.146C15.9725 23.1191 16.3287 22.997 16.6368 22.7915C16.6659 22.7716 16.695 22.7502 16.7225 22.7273L20.5002 19.5128C20.5375 19.4928 20.5787 19.4811 20.621 19.4784C20.6632 19.4758 20.7056 19.4823 20.7451 19.4975L27.9775 22.738C28.0366 22.7631 28.0862 22.8062 28.1195 22.8612C28.1527 22.9161 28.1678 22.9801 28.1627 23.0441C27.957 24.6017 27.1912 26.0312 26.0083 27.0653C24.8255 28.0994 23.3066 28.6674 21.7354 28.6632Z" fill="#ffc107"></path> </svg>
+                <a href="tel:+79272182400">+7 (927) 218-24-00</a>
+            </div>
+         </div>
+
+        <ul class="social_media_list">
+  <li>
+    <a href="https://telegram.me/region_treid">
+      <svg width="38" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 0C11.2 0 0 11.2 0 25C0 38.8 11.2 50 25 50C38.8 50 50 38.8 50 25C50 11.2 38.8 0 25 0ZM36.6 17C36.225 20.95 34.6 30.55 33.775 34.975C33.425 36.85 32.725 37.475 32.075 37.550C30.625 37.675 29.525 36.6 28.125 35.675C25.925 34.225 24.675 33.325 22.55 31.925C20.075 30.3 21.675 29.4 23.1 27.95C23.475 27.575 29.875 21.75 30 21.225C30.0174 21.1455 30.0151 21.0629 29.9933 20.9845C29.9715 20.9061 29.9309 20.8342 29.875 20.775C29.725 20.65 29.525 20.7 29.35 20.725C29.125 20.775 25.625 23.1 18.8 27.7C17.8 28.375 16.9 28.725 16.1 28.7C15.2 28.675 13.5 28.2 12.225 27.775C10.65 27.275 9.425 27 9.525 26.125C9.575 25.675 10.2 25.225 11.375 24.75C18.675 21.575 23.525 19.475 25.95 18.475C32.9 15.575 34.325 15.075 35.275 15.075C35.475 15.075 35.95 15.125 36.25 15.375C36.5 15.575 36.575 15.85 36.6 16.05C36.575 16.2 36.625 16.65 36.6 17Z" fill="#27A7E7"></path>
+      </svg>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://wa.me/79869531909?text=">
+      <svg width="38" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.5" d="M42.7136 7.27512C40.4097 4.96039 37.6659 3.12504 34.642 1.87604C31.6181 0.627029 28.3746 -0.0106579 25.1005 0.000134737C11.3819 0.000134737 0.201005 11.1251 0.201005 24.7751C0.201005 29.1501 1.35678 33.4 3.51759 37.15L0 50L13.191 46.55C16.8342 48.525 20.9296 49.575 25.1005 49.575C38.8191 49.575 50 38.45 50 24.8001C50 18.1751 47.4121 11.9501 42.7136 7.27512ZM25.1005 45.375C21.3819 45.375 17.7387 44.375 14.5477 42.5L13.794 42.05L5.95477 44.1L8.0402 36.5L7.53769 35.725C5.47122 32.4427 4.37418 28.6482 4.37186 24.7751C4.37186 13.4251 13.6683 4.17512 25.0754 4.17512C30.603 4.17512 35.804 6.32512 39.6985 10.2251C41.6272 12.1348 43.1556 14.4065 44.195 16.9084C45.2345 19.4104 45.7643 22.0928 45.7538 24.8001C45.804 36.15 36.5075 45.375 25.1005 45.375ZM36.4573 29.9751C35.8291 29.6751 32.7638 28.1751 32.2111 27.9501C31.6332 27.7501 31.2312 27.6501 30.804 28.2501C30.3769 28.8751 29.196 30.2751 28.8442 30.6751C28.4925 31.1001 28.1156 31.1501 27.4874 30.8251C26.8593 30.5251 24.8492 29.8501 22.4874 27.7501C20.6281 26.1001 19.397 24.0751 19.0201 23.4501C18.6683 22.8251 18.9698 22.5001 19.2965 22.1751C19.5729 21.9001 19.9246 21.4501 20.2261 21.1001C20.5276 20.7501 20.6533 20.4751 20.8543 20.0751C21.0553 19.6501 20.9548 19.3001 20.804 19.0001C20.6533 18.7001 19.397 15.6501 18.8945 14.4001C18.392 13.2001 17.8643 13.3501 17.4874 13.3251H16.2814C15.8543 13.3251 15.201 13.4751 14.6231 14.1001C14.0703 14.7251 12.4623 16.2251 12.4623 19.2751C12.4623 22.3251 14.6985 25.2751 15 25.6751C15.3015 26.1001 19.397 32.35 25.6281 35.025C27.1105 35.675 28.2663 36.05 29.1709 36.325C30.6533 36.8 32.01 36.725 33.0905 36.575C34.2965 36.4 36.7839 35.075 37.2864 33.625C37.8141 32.175 37.8141 30.9501 37.6382 30.6751C37.4623 30.4001 37.0854 30.2751 36.4573 29.9751Z" fill="#009411"></path>
+      </svg>
+    </a>
+  </li>
+
+  </li>
+</ul>
+
+<button class="btn btn-card taxi-order-btn btn_footer">Заказать такси</button>
+        </footer>
+
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d3b3d20b-6c57-4626-b184-69cda98f0559&lang=ru_RU" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+ 
+
+    <!-- Подключаем необходимые библиотеки -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
+   <script src="https://api-maps.yandex.ru/2.1/?apikey=d3b3d20b-6c57-4626-b184-69cda98f0559&suggest_apikey=0d3aa57b-7df0-49af-a363-3a7b72745602&lang=ru_RU" type="text/javascript"></script>
+
+    
+    
+
+<div id="taxiModal" class="taxi-modal">
+    <div class="taxi-modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Оставить заявку</h2>
+        
+        <form id="taxiForm" class="taxi-form">
+            <div class="flex_cont_input">
+                <div class="input-group">
+                    <input type="text" id="name" class="suggestions-input" placeholder="Ваше ФИО" required>
+                    <div id="name-error" class="error-message">Пожалуйста, укажите ваше ФИО</div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="tel" id="phone" class="suggestions-input" placeholder="+7 (999) 999-99-99" required>
+                    <div id="phone-error" class="error-message">Пожалуйста, укажите корректный номер</div>
+                </div>
+            </div>
+            
+            <div class="flex_cont_input">
+                <div class="input-group">
+                    <input type="text" id="from" placeholder="Город, адрес" required>
+                    <div id="from-error" class="error-message">Пожалуйста, укажите откуда</div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="to" placeholder="Город, адрес" required>
+                    <div id="to-error" class="error-message">Пожалуйста, укажите куда</div>
+                </div>
+            </div>
+            
+            <div class="flex_cont_input">
+                <div class="input-group">
+                    <input type="datetime-local" id="datetime" required >
+                    <div id="datetime-error" class="error-message">Пожалуйста, укажите дату и время</div>
+                </div>
+                
+                <div class="input-group">
+                    <select id="tariff" required>
+                        <option value="">Выберите тариф</option>
+                        <option value="1.5">Эконом (1.5 руб/км)</option>
+                        <option value="2">Комфорт (2 руб/км)</option>
+                        <option value="3">Бизнес (3 руб/км)</option>
+                    </select>
+                    <div id="tariff-error" class="error-message">Пожалуйста, выберите тариф</div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <textarea id="notes" style="resize: none;" rows="5" placeholder="Особые требования, детали поездки и т.д."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-card">Отправить заявку</button>
+            
+            <p style="font-size: 15px; margin-top: 15px; color: #333">
+                Нажимая на кнопку вы соглашаетесь с <a href="" class="politic">политикой конфиденциальности</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d3b3d20b-6c57-4626-b184-69cda98f0559&lang=ru_RU" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Инициализация маски для телефона
+        $('#phone').inputmask('+79999999999');
+        
+        // Валидация формы при отправке
+        $('#taxiForm').on('submit', async function(event) {
+            event.preventDefault();
+            
+            // Проверка валидности формы
+            let isValid = true;
+            const form = this;
+            
+            // Проверяем все обязательные поля
+            $(form).find('input[required], select[required]').each(function() {
+                const field = $(this);
+                const errorElement = $(`#${field.attr('id')}-error`);
+                
+                if (!field.val() || (field.attr('id') === 'phone' && field.val().includes('_'))) {
+                    field.addClass('error');
+                    errorElement.show();
+                    isValid = false;
+                } else {
+                    field.removeClass('error');
+                    errorElement.hide();
+                }
+            });
+            
+            if (!isValid) {
+                return;
+            }
+            
+            const submitBtn = $(this).find('.btn_price_taxi');
+            submitBtn.prop('disabled', true);
+            submitBtn.text('Отправка...');
+            
+            try {
+                const name = $('#name').val();
+                const phone = $('#phone').val();
+                const from = $('#from').val();
+                const to = $('#to').val();
+                const datetime = $('#datetime').val();
+                const tariff = $('#tariff').val();
+                const notes = $('#notes').val();
+                
+                // Рассчитываем расстояние
+                const distance = await calculateDistance(from, to);
+                const pricePerKm = parseFloat(tariff);
+                const totalPrice = Math.round(distance * pricePerKm);
+                
+                // Форматируем дату и время для вывода
+                const dateObj = new Date(datetime);
+                const formattedDate = dateObj.toLocaleDateString('ru-RU', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                const formattedTime = dateObj.toLocaleTimeString('ru-RU', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                // Отправляем в Telegram
+                await sendToTelegram({
+                    name, 
+                    phone, 
+                    from, 
+                    to, 
+                    distance, 
+                    tariff: $('#tariff option:selected').text(),
+                    totalPrice,
+                    notes,
+                    date: formattedDate,
+                    time: formattedTime
+                });
+                
+                alert('Заказ успешно отправлен!\nМы свяжемся с вами в ближайшее время.');
+                form.reset();
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Ошибка: ' + error.message);
+            } finally {
+                submitBtn.prop('disabled', false);
+                submitBtn.text('Отправить заявку');
+            }
+        });
+        
+        // Убираем ошибку при начале ввода
+        $('input, select').on('input change', function() {
+            const field = $(this);
+            if (field.val()) {
+                field.removeClass('error');
+                $(`#${field.attr('id')}-error`).hide();
+            }
+        });
+    });
+
+    // Функция расчета расстояния
+    function calculateDistance(from, to) {
+        return new Promise((resolve, reject) => {
+            if (!from || !to) {
+                reject(new Error('Укажите пункты отправления и прибытия'));
+                return;
+            }
+            
+            ymaps.route([from, to], {
+                mapStateAutoApply: false
+            }).then(function(route) {
+                const distance = route.getLength() / 1000; // в километрах
+                resolve(distance);
+            }).catch(function(error) {
+                reject(new Error('Не удалось рассчитать маршрут. Проверьте названия населенных пунктов.'));
+            });
+        });
+    }
+
+    // Функция отправки в Telegram с красивым форматированием
+    async function sendToTelegram(data) {
+       const botToken = '7501286936:AAGQTVWdnXuR7Bkc6IESp5x9ahc1J0wJ3Ec';
+        const chatId = '-4651739702';
+         const cleanPhone = data.phone.replace(/\D/g, '');
+        
+        // Красивое форматирование с HTML
+        const text = `
+<b>🚕 НОВЫЙ ЗАКАЗ ТАКСИ (Такси по свету)</b>
+
+<b>👤 КЛИЕНТ</b>
+<b>ФИО:</b> ${escapeHtml(data.name)}
+<b>Телефон:</b> <a href="${phoneLink}">${escapeHtml(data.phone)}</a>
+
+<b>📍 Маршрут:</b>
+${escapeHtml(data.from)} → ${escapeHtml(data.to)}
+<b>Расстояние:</b> ${data.distance.toFixed(1)} км
+
+<b>📅 Дата и время:</b>
+${escapeHtml(data.date)} в ${escapeHtml(data.time)}
+
+<b>💰 Тариф:</b> ${escapeHtml(data.tariff)}
+<b>💵 Стоимость:</b> <b>${data.totalPrice} руб.</b>
+
+<b>📝 Примечания:</b>
+${data.notes ? escapeHtml(data.notes) : 'нет'}
+        `.trim();
+        
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: text,
+                parse_mode: 'HTML',
+                disable_web_page_preview: true
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (!result.ok) {
+            throw new Error('Ошибка отправки заказа');
+        }
+    }
+
+    // Функция для экранирования HTML-символов
+    function escapeHtml(text) {
+        if (!text) return '';
+        return text.toString()
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
+
+
+
+
+     jQuery.noConflict();
+        (function($) {
+            $(document).ready(function() {
+                // Инициализация подсказок для адресов
+                $("#cityFrom").suggestions({
+                    token: "2ca423f90d51a7825cab5f07efdbf16f37c589f5",
+                    type: "ADDRESS",
+                    count: 5,
+                    minChars: 3,
+                    onSelect: function(suggestion) {
+                        console.log("Выбрано место отправления:", suggestion.value);
+                    }
+                });
+                
+                $("#cityTo").suggestions({
+                    token: "2ca423f90d51a7825cab5f07efdbf16f37c589f5",
+                    type: "ADDRESS",
+                    count: 5,
+                    minChars: 3,
+                    onSelect: function(suggestion) {
+                        console.log("Выбрано место назначения:", suggestion.value);
+                    }
+                });
+            });
+        })(jQuery);
+</script>
+
+
+
+
+  <script>
 document.addEventListener('DOMContentLoaded', function() {
     const showMoreBtn = document.getElementById('showMoreBtn');
     const pricingCards = document.querySelectorAll('.pricing-card');
@@ -735,139 +1120,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Закрываем все открытые ответы
+                    questions.forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
+                    
+                    // Открываем/закрываем текущий ответ
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+            
+            // Открываем первый вопрос по умолчанию
+            if (questions.length > 0) {
+                questions[0].click();
+            }
+        });
 </script>
 
-
- 
-
-    <!-- Подключаем необходимые библиотеки -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
-   <script src="https://api-maps.yandex.ru/2.1/?apikey=d3b3d20b-6c57-4626-b184-69cda98f0559&suggest_apikey=0d3aa57b-7df0-49af-a363-3a7b72745602&lang=ru_RU" type="text/javascript"></script>
-    
-    <script>
-        jQuery.noConflict();
-        (function($) {
-            $(document).ready(function() {
-                // Инициализация подсказок для адресов
-                $("#cityFrom").suggestions({
-                    token: "2ca423f90d51a7825cab5f07efdbf16f37c589f5",
-                    type: "ADDRESS",
-                    count: 5,
-                    minChars: 3,
-                    onSelect: function(suggestion) {
-                        console.log("Выбрано место отправления:", suggestion.value);
-                    }
-                });
-                
-                $("#cityTo").suggestions({
-                    token: "2ca423f90d51a7825cab5f07efdbf16f37c589f5",
-                    type: "ADDRESS",
-                    count: 5,
-                    minChars: 3,
-                    onSelect: function(suggestion) {
-                        console.log("Выбрано место назначения:", suggestion.value);
-                    }
-                });
-            });
-        })(jQuery);
-
-        let myMap;
-        let route;
-
-        function calculateCost() {
-            var cityFrom = document.getElementById('cityFrom').value.trim();
-            var cityTo = document.getElementById('cityTo').value.trim();
-            
-            // Получаем выбранный тариф
-            var selectedClass = document.querySelector('input[name="class"]:checked');
-            if (!selectedClass) {
-                alert("Пожалуйста, выберите класс автомобиля.");
-                return;
-            }
-            var tariff = parseFloat(selectedClass.getAttribute('data-rate'));
-            
-            // Получаем стоимость дополнительных услуг
-            var servicesSelect = document.getElementById('services');
-            var servicesCost = parseFloat(servicesSelect.value);
-
-            if (!cityFrom || !cityTo) {
-                alert("Пожалуйста, заполните все поля.");
-                return;
-            }
-
-            ymaps.ready(function () {
-                var geocoderFrom = ymaps.geocode(cityFrom);
-                var geocoderTo = ymaps.geocode(cityTo);
-
-                Promise.all([geocoderFrom, geocoderTo]).then(function (res) {
-                    if (res[0].geoObjects.getLength() === 0 || res[1].geoObjects.getLength() === 0) {
-                        alert('Не удалось найти указанные адреса. Проверьте правильность ввода.');
-                        return;
-                    }
-
-                    var coordsFrom = res[0].geoObjects.get(0).geometry.getCoordinates();
-                    var coordsTo = res[1].geoObjects.get(0).geometry.getCoordinates();
-
-                    ymaps.route([coordsFrom, coordsTo]).then(function (route) {
-                        if (!route) {
-                            alert('Не удалось построить маршрут между указанными точками.');
-                            return;
-                        }
-
-                        var distance = route.getLength() / 1000; // расстояние в км
-                        var baseCost = distance * tariff;
-                        var totalCost = baseCost + servicesCost;
-
-                        document.getElementById('result').innerHTML = `
-                            <strong>Стоимость поездки:</strong> ${Math.round(totalCost)}₽<br>
-                            <strong>Расстояние:</strong> ${distance.toFixed(1)} км<br>
-                            <strong>Тариф:</strong> ${tariff}₽/км<br>
-                            <strong>Доп. услуги:</strong> ${servicesCost}₽
-                        `;
-
-                        // Отображаем карту
-                        document.getElementById('map').style.display = 'block';
-
-                        // Удаляем старую карту, если есть
-                        if (myMap) {
-                            myMap.destroy();
-                        }
-
-                        // Создаем новую карту
-                        myMap = new ymaps.Map("map", {
-                            center: coordsFrom,
-                            zoom: 10
-                        });
-
-                        // Добавляем маршрут на карту
-                        myMap.geoObjects.add(route.getPaths());
-
-                        // Добавляем метки начала и конца маршрута
-                        var placemarkFrom = new ymaps.Placemark(coordsFrom, {
-                            hintContent: 'Точка отправления'
-                        });
-                        var placemarkTo = new ymaps.Placemark(coordsTo, {
-                            hintContent: 'Точка назначения'
-                        });
-                        
-                        myMap.geoObjects.add(placemarkFrom);
-                        myMap.geoObjects.add(placemarkTo);
-
-                        // Автоматически подбираем масштаб
-                        myMap.setBounds(route.getWayPoints().getBounds(), {
-                            checkZoomRange: true
-                        });
-
-                    }).catch(function (error) {
-                        alert('Ошибка при построении маршрута: ' + error.message);
-                    });
-                }).catch(function (error) {
-                    alert('Ошибка при геокодировании: ' + error.message);
-                });
-            });
-        }
-    </script>
 
 </body>
 </html>
