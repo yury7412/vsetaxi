@@ -805,12 +805,12 @@
             
             <div class="flex_cont_input">
                 <div class="input-group">
-                    <input type="text" id="from" placeholder="Город, адрес" required>
+                    <input type="text" id="from" placeholder="Пункт отправления" required>
                     <div id="from-error" class="error-message">Пожалуйста, укажите откуда</div>
                 </div>
                 
                 <div class="input-group">
-                    <input type="text" id="to" placeholder="Город, адрес" required>
+                    <input type="text" id="to" placeholder="Пункт прибытия" required>
                     <div id="to-error" class="error-message">Пожалуйста, укажите куда</div>
                 </div>
             </div>
@@ -971,15 +971,14 @@
     async function sendToTelegram(data) {
        const botToken = '7501286936:AAGQTVWdnXuR7Bkc6IESp5x9ahc1J0wJ3Ec';
         const chatId = '-4651739702';
-         const cleanPhone = data.phone.replace(/\D/g, '');
-        
+
         // Красивое форматирование с HTML
         const text = `
-<b>🚕 НОВЫЙ ЗАКАЗ ТАКСИ (Такси по свету)</b>
+<b>🚕 НОВЫЙ ЗАКАЗ ТАКСИ (Все такси)</b>
 
 <b>👤 КЛИЕНТ</b>
 <b>ФИО:</b> ${escapeHtml(data.name)}
-<b>Телефон:</b> <a href="${phoneLink}">${escapeHtml(data.phone)}</a>
+<b>Телефон:</b> ${escapeHtml(data.phone)}
 
 <b>📍 Маршрут:</b>
 ${escapeHtml(data.from)} → ${escapeHtml(data.to)}
